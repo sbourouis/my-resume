@@ -37,7 +37,7 @@ import {ProjectsService} from './services/projects.service';
     StoreDevtoolsModule.instrument(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [ProjectsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
