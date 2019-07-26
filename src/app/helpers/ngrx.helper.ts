@@ -11,3 +11,5 @@ export const extractPayload = () => <T>(source: Observable<TypedAction<string> &
   source.pipe(
     map(action => action.payload)
   );
+
+export const setState = <T>(update: Partial<T>, state: T): T => ({...state, ...update});

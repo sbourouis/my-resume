@@ -13,6 +13,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {reducers} from '@app/main-store';
 import {HttpClientModule} from '@angular/common/http';
 import {ProjectsService} from './services/projects.service';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {ProjectsService} from './services/projects.service';
     HomeComponent,
     ProjectsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    NavBarComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
