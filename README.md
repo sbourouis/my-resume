@@ -1,5 +1,7 @@
 # MyResume
 
+<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="sabrina-bourouis-a77724aa"><a class="LI-simple-link" href='https://fr.linkedin.com/in/sabrina-bourouis-a77724aa/en?trk=profile-badge'>Sabrina Bourouis</a></div>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
