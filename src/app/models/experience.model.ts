@@ -7,8 +7,8 @@ export interface Experience {
     id?: number;
     name: string;
     location: string;
-    fromDate: Date;
-    toDate: Date;
+    fromDate: string;
+    toDate: string;
     type: EXPERIENCE_TYPE;
     description?: string;
 }
