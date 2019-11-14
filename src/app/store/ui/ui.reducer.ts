@@ -1,4 +1,4 @@
-import {createReducer, on} from '@ngrx/store';
+import {createReducer, on, Action} from '@ngrx/store';
 import {closeSideNav, setTitle, openSideNav, toggleSideNav, resetTitle} from '@app/main-store/ui/ui.actions';
 import {setState} from '../../helpers/ngrx.helper';
 
@@ -12,7 +12,7 @@ export const initialState: State = {
   title: 'Sabrina Bourouis'
 };
 
-export const reducer = createReducer<State>(
+export const uiReducer = createReducer<State>(
   initialState,
   on(openSideNav, (state) =>
     setState({
@@ -38,6 +38,10 @@ export const reducer = createReducer<State>(
       title: initialState.title
     }, state))
 );
+
+export function reducer(state: State | undefined, action: Action) {
+  return uiReducer(state, action);
+}
 
 export const isSideNavOpen = (state: State) => state.isSideNavOpen;
 export const getTitle = (state: State) => state.title;

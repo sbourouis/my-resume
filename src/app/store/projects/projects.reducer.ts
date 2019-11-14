@@ -1,6 +1,6 @@
 import {Project} from '../../models/project.model';
 import {createEntityAdapter, EntityState} from '@ngrx/entity';
-import {createReducer, on} from '@ngrx/store';
+import {createReducer, on, Action} from '@ngrx/store';
 import {loadAllProjectsSuccess, loadProjectSuccess} from './projects.actions';
 
 export const projectsAdapter = createEntityAdapter<Project>({
@@ -11,7 +11,7 @@ export interface State extends EntityState<Project> {}
 
 export const initialState = projectsAdapter.getInitialState();
 
-export const reducer = createReducer<State>(
+export const projectsReducer = createReducer<State>(
   initialState,
   on(loadAllProjectsSuccess, (state, {payload: projects}) =>
     projectsAdapter.addAll(projects, state)
@@ -20,6 +20,10 @@ export const reducer = createReducer<State>(
     projectsAdapter.addOne(project, state)
   )
 );
+
+export function reducer(state: State | undefined, action: Action) {
+  return projectsReducer(state, action);
+}
 
 export const {
   selectAll: getAllProjects

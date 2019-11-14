@@ -1,7 +1,7 @@
 <h1 style="display:flex;justify-content: center">GET IN TOUCH</h1>
 
 <br/>
-<mat-card>
+<mat-card [ngClass]="{column: isXSLayout$ | async}">
     <div class="column">
         <mat-icon>phone</mat-icon>
         <p><a href="tel:+61455040723">+61 455 040 723</a></p>
