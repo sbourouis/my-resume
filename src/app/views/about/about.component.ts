@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Experience, EXPERIENCE_TYPE } from 'src/app/models/experience.model';
 import { map } from 'rxjs/operators';
+import { ExperiencesStoreFacade } from '@app/main-store/experiences/experiences.facade';
 
 @Component({
   selector: 'app-about',
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class AboutComponent implements OnInit {
 
   // TODO: get experiences from the store
-  experiences$: Observable<Experience[]> = of([]);
+  experiences$: Observable<Experience[]> = this.experiencesFacade.allExperiences$;
   schoolExperiences$ = this.experiences$.pipe(
     map(experiences => experiences
       .filter(e => e.type === EXPERIENCE_TYPE.SCHOOL)
@@ -25,9 +26,10 @@ export class AboutComponent implements OnInit {
     )
   );
 
-  constructor() { }
+  constructor(private experiencesFacade: ExperiencesStoreFacade) { }
 
   ngOnInit() {
+    this.experiencesFacade.loadExperiences();
   }
 
 }

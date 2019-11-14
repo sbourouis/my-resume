@@ -18,3 +18,9 @@ export const reducers: ActionReducerMap<State> = {
 export const getUiState = createFeatureSelector<fromUi.State>('ui');
 export const isSideNavOpen = createSelector(getUiState, fromUi.isSideNavOpen);
 export const getTitle = createSelector(getUiState, fromUi.getTitle);
+
+export const getProjectsState = createFeatureSelector<fromProjects.State>('projects');
+export const getAllProjects = createSelector(getProjectsState, fromProjects.getAllProjects);
+
+export const getExperiencesState = createFeatureSelector<fromExperiences.State>('experiences');
+export const getAllExperiences = createSelector(getExperiencesState, fromExperiences.getAllExperiences);

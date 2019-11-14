@@ -1,7 +1,7 @@
 export enum EXPERIENCE_TYPE {
     SCHOOL = 'school',
     WORK = 'work'
-};
+}
 
 export interface Experience {
     id?: number;

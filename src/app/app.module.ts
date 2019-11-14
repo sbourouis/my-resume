@@ -20,6 +20,7 @@ import { UiFacade } from './store/ui/ui.facade';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsStoreFacade } from './store/projects/projects.facade';
 import { ExperiencesService } from './services/experiences.service';
+import { ExperiencesStoreFacade } from './store/experiences/experiences.facade';
 
 @NgModule({
   declarations: [
@@ -50,10 +51,11 @@ import { ExperiencesService } from './services/experiences.service';
     BrowserAnimationsModule
   ],
   providers: [
-    ProjectsService, 
+    ProjectsService,
     UiFacade,
     ProjectsStoreFacade,
-    ExperiencesService
+    ExperiencesService,
+    ExperiencesStoreFacade
   ],
   bootstrap: [AppComponent]
 })
