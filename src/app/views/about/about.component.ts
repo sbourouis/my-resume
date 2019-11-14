@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Experience, EXPERIENCE_TYPE } from 'src/app/models/experience.model';
 import { map } from 'rxjs/operators';
 import { ExperiencesStoreFacade } from '@app/main-store/experiences/experiences.facade';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-about',
@@ -25,7 +26,15 @@ export class AboutComponent implements OnInit {
     )
   );
 
-  constructor(private experiencesFacade: ExperiencesStoreFacade) { }
+  isSMLayout$ = this.breakpointObserver.observe([
+    Breakpoints.Small,
+    Breakpoints.XSmall
+  ]).pipe(
+    map(res => res.matches)
+  );
+
+  constructor(private experiencesFacade: ExperiencesStoreFacade,
+              private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
     this.experiencesFacade.loadExperiences();

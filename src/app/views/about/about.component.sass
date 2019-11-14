@@ -6,12 +6,6 @@
     flex: auto
     width: 350px
     margin: 0 8px 8px 0
-
-  app-video-card-item.sm
-    flex: auto
-    height: auto
-    width: 100%
-    margin: 0 0 8px 0
     
 .mat-accent
     color: #ffb300
@@ -19,13 +13,18 @@
 .scroll-area
   max-height: calc(100vh - 155px)
 
-:host
+.about
     flex-direction: row
     min-height: 100%
     min-width: 100%
     display: flex
     box-sizing: border-box
     max-height: calc(100vh - 64px)
+
+.sm
+  flex-direction: column!important
+  .scroll-area
+    max-height: calc(100vh - 290px)
 
 div
     flex: 1
