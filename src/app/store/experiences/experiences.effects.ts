@@ -16,7 +16,6 @@ export class ExperiencesEffects {
   loadAll$ = createEffect(() => this.actions$.pipe(
     ofType(loadAllExperiences),
     switchMap( _ => this.experiencesService.loadExperiences().pipe(
-        tap(console.log),
       toPayload(),
       map(loadAllExperiencesSuccess)
     ))

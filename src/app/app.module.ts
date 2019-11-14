@@ -21,6 +21,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { ProjectsStoreFacade } from './store/projects/projects.facade';
 import { ExperiencesService } from './services/experiences.service';
 import { ExperiencesStoreFacade } from './store/experiences/experiences.facade';
+import { ExperiencesEffects } from './store/experiences/experiences.effects';
+import { ProjectsEffects } from './store/projects/projects.effects';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { ExperiencesStoreFacade } from './store/experiences/experiences.facade';
         strictActionSerializability: true,
       }
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([ExperiencesEffects, ProjectsEffects]),
     StoreDevtoolsModule.instrument(),
     HttpClientModule,
     LoadingBarRouterModule,
