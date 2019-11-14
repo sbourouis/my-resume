@@ -41,16 +41,6 @@ export const experiences: Experience[] = [
     },
     {
         id: 5,
-        name: 'R&D Developer Apprentice',
-        location: 'IRCAD, Strasbourg, France',
-        description: `Full-stack web development using AngularJS, Angular and Node.js/NestJS,
-         unit tests writing, member of a Scrum development team… `,
-        type: EXPERIENCE_TYPE.WORK,
-        fromDate: new Date(2015, 9).toISOString(),
-        toDate: new Date(2018, 8).toISOString()
-    },
-    {
-        id: 6,
         name: 'Application Developer Intern',
         location: 'ACCES SAVOIRS, Québec city, Canada',
         description: 'Applications development (mainly C# .NET) for non-profit organizations.',
