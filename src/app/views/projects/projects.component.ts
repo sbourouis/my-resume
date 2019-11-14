@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsStoreFacade } from '@app/main-store/projects/projects.facade';
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  projects$ = this.projectsFacade.allProjects$;
+
+  constructor(private projectsFacade: ProjectsStoreFacade) { }
 
   ngOnInit() {
+    this.projectsFacade.loadProjects();
   }
 
 }

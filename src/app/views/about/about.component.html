@@ -16,12 +16,18 @@
   <mat-divider></mat-divider>
 
   <h2><mat-icon>school</mat-icon>   Education</h2>
-
-  
+  <app-experience
+    *ngFor="let experience of schoolExperiences$ | async"
+    [experience]="experience"
+  ></app-experience>
 
   <mat-divider></mat-divider>
 
   <h2><mat-icon>work</mat-icon>   Work experience</h2>
+  <app-experience
+    *ngFor="let experience of workExperiences$ | async"
+    [experience]="experience"
+  ></app-experience>
 
 
 </div>

@@ -2,7 +2,7 @@ import {Project} from '../../models/project.model';
 import {createAction, props} from '@ngrx/store';
 
 export const loadProject = createAction(
-  '[Video Stats] Load',
+  '[Projects] Load',
   props<{payload: number}>()
 );
 

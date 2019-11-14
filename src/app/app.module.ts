@@ -18,6 +18,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialCustomModule } from './modules';
 import { UiFacade } from './store/ui/ui.facade';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { ProjectsStoreFacade } from './store/projects/projects.facade';
+import { ExperiencesService } from './services/experiences.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,12 @@ import { ExperienceComponent } from './components/experience/experience.componen
     MaterialCustomModule,
     BrowserAnimationsModule
   ],
-  providers: [ProjectsService, UiFacade],
+  providers: [
+    ProjectsService, 
+    UiFacade,
+    ProjectsStoreFacade,
+    ExperiencesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
