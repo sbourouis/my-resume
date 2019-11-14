@@ -11,18 +11,17 @@ import { ExperiencesStoreFacade } from '@app/main-store/experiences/experiences.
 })
 export class AboutComponent implements OnInit {
 
-  // TODO: get experiences from the store
   experiences$: Observable<Experience[]> = this.experiencesFacade.allExperiences$;
   schoolExperiences$ = this.experiences$.pipe(
     map(experiences => experiences
       .filter(e => e.type === EXPERIENCE_TYPE.SCHOOL)
-      .sort((a, b) => a.fromDate > b.fromDate ? 1 : -1)
+      .sort((a, b) => new Date(a.fromDate) > new Date(b.fromDate) ? -1 : 1)
     ),
   );
   workExperiences$ = this.experiences$.pipe(
     map(experiences => experiences
       .filter(e => e.type === EXPERIENCE_TYPE.WORK)
-      .sort((a, b) => a.fromDate > b.fromDate ? 1 : -1)
+      .sort((a, b) => new Date(a.fromDate) > new Date(b.fromDate) ? -1 : 1)
     )
   );
 
