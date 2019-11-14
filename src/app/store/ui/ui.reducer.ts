@@ -9,7 +9,7 @@ export interface State {
 
 export const initialState: State = {
   isSideNavOpen: false,
-  title: 'CONDOR Annotate'
+  title: 'Sabrina Bourouis'
 };
 
 export const reducer = createReducer<State>(

@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'material-dark-theme'
+@import './color-palette'
+
+body
+  margin: 0
+  padding: 0
+  font-family: 'Roboto', sans-serif
+  font-weight: normal
+  background-color: #303030 !important
+  color: $light-1 !important
+  min-height: 100vh
+  min-width: 100%
+
+
+html, body
+  margin: 0
+  box-sizing: border-box
+  height: 100%
+  background-color: #303030
+
+
+.padded
+  padding: 20px
+
+
+button:focus
+  outline: 0
+
+
+input:focus
+  outline: 0
+
+a:focus
+  outline: 0
+
+.mat-expansion-panel-body
+  padding: 10px !important
+
+.mat-expansion-panel-header
+  padding-left: 10px !important
+  padding-right: 10px !important
+
+.mat-drawer-content
+  width: 100%
+  overflow: hidden !important
+  position: absolute !important
+  height: 100vh
+
+drawer-content
+  height: 100%
+
+.ps.ps--active-y > .ps__rail-y
+  background: transparent
+
+.ps.ps--scrolling-y > .ps__rail-y
+  background-color: transparent !important

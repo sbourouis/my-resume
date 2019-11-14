@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
+import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './views/home/home.component';
 import { ProjectsComponent } from './views/projects/projects.component';
 import { AboutComponent } from './views/about/about.component';
 import { ContactComponent } from './views/contact/contact.component';
@@ -15,16 +15,19 @@ import {HttpClientModule} from '@angular/common/http';
 import {ProjectsService} from './services/projects.service';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MaterialCustomModule } from './modules';
+import { UiFacade } from './store/ui/ui.facade';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ProjectsComponent,
     AboutComponent,
     ContactComponent,
     NavBarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +42,12 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument(),
-    HttpClientModule
+    HttpClientModule,
+    LoadingBarRouterModule,
+    MaterialCustomModule,
+    BrowserAnimationsModule
   ],
-  providers: [ProjectsService],
+  providers: [ProjectsService, UiFacade],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

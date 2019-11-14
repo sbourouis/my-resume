@@ -10,7 +10,7 @@ export class ProjectsEffects {
 
   loadAll$ = createEffect( () => this.actions$.pipe(
     ofType(loadAllProjects),
-    switchMap( videoId => this.projectsService.loadAllProjects().pipe(
+    switchMap( _ => this.projectsService.loadAllProjects().pipe(
       toPayload(),
       map(loadAllProjectsSuccess)
     ))
