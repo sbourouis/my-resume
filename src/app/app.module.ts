@@ -23,6 +23,7 @@ import { ExperiencesService } from './services/experiences.service';
 import { ExperiencesStoreFacade } from './store/experiences/experiences.facade';
 import { ExperiencesEffects } from './store/experiences/experiences.effects';
 import { ProjectsEffects } from './store/projects/projects.effects';
+import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ProjectsEffects } from './store/projects/projects.effects';
   ],
   imports: [
     BrowserModule,
+    PerfectScrollbarModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
