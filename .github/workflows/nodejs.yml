@@ -24,3 +24,5 @@ jobs:
         npm run deploy
       env:
         CI: true
+        SURGE_LOGIN: bourouis.sabrina@laposte.net
+        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
