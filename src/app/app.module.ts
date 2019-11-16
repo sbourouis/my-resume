@@ -24,6 +24,8 @@ import { ExperiencesStoreFacade } from './store/experiences/experiences.facade';
 import { ExperiencesEffects } from './store/experiences/experiences.effects';
 import { ProjectsEffects } from './store/projects/projects.effects';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+import { ProjectItemComponent } from './components/project-item/project-item.component';
+import { ProjectListComponent } from './components/project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
     ContactComponent,
     NavBarComponent,
     ToolbarComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    ProjectItemComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
