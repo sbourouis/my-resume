@@ -42,7 +42,7 @@ export const projects: Project[] = [
     },
     {
         id: 4,
-        name: 'Non-responsive to responsive',
+        name: 'Non-responsive to responsive website',
         type: PROJECT_TYPE.PRO,
         description: `
         Update a non responsive website to a responsive website.
@@ -72,7 +72,7 @@ export const projects: Project[] = [
         resources: [{
             name: 'Medical data visualization',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/storage.png'
+            src: 'assets/images/storage.png'
         }],
         participants: 1,
         experienceId: 4
@@ -97,14 +97,63 @@ export const projects: Project[] = [
         resources: [{
             name: 'Annotation page',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/annotations.png'
+            src: 'assets/images/annotations.png'
         }, {
             name: 'Video list',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/videos.png'
+            src: 'assets/images/videos.png'
         }],
         participants: 1,
         experienceId: 3
     },
+    {
+        id: 7,
+        name: 'Store management',
+        type: PROJECT_TYPE.ACADEMIC,
+        description: `
+        Windows Forms application development using C# .NET and Visual Studio 2012 allowing
+the complete management of a merchant application (product catalog, multi-criteria
+search, reviews management, sales, statistics)
+        `,
+        keywords: ['C#', '.NET', 'Windows Forms'],
+        resources: [],
+        participants: 2,
+        experienceId: 2
+    },
+    {
+        id: 8,
+        name: 'Rogue Like game',
+        type: PROJECT_TYPE.ACADEMIC,
+        description: `
+        Rogue-like game development using Java Swing (on Jdeveloper). Respect of MVC
+architecture.
+ASCII representation, ranking, random game element generation (ennemies, map, objects, ...), permadeath, ...
+        `,
+        keywords: ['Java', 'Swing'],
+        resources: [],
+        participants: 2,
+        experienceId: 2
+    },
+    {
+        id: 9,
+        name: 'Soup Kitchen management',
+        type: PROJECT_TYPE.PRO,
+        description: `
+        Windows Forms application development using C# .NET 4.5 and Visual Studio 2012 allowing the
+complete management of a soup kitchen (users, customers, prices, transactions, search, history).
+        `,
+        keywords: ['C#', '.NET', 'WinForms'],
+        resources: [{
+            name: 'Lauberivière',
+            type: RESOURCE_TYPE.IMG,
+            src: 'assets/images/Lauberiviere.png'
+        }, {
+            name: 'Blog url',
+            type: RESOURCE_TYPE.LINK,
+            src: 'http://unstageauquebec.blogspot.com/2015/05/captures-decran.html'
+        }],
+        participants: 2,
+        experienceId: 5
+    }
 
 ];

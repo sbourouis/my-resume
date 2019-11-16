@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Experience } from '../models/experience.model';
 import { environment } from 'src/environments/environment';
 import { of, Observable } from 'rxjs';
-import { experiences } from 'src/assets/experiences';
+import { experiences } from 'src/assets/data/experiences';
 
 export class ExperiencesService {
     constructor(private http: HttpClient) { }
