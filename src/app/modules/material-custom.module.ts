@@ -20,6 +20,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 const modules = [
   MatButtonModule,
@@ -43,7 +45,8 @@ const modules = [
   MatSlideToggleModule,
   MatTabsModule,
   MatSidenavModule,
-  DragDropModule
+  DragDropModule,
+  MatChipsModule
 ];
 
 @NgModule({

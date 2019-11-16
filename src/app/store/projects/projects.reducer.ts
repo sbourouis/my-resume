@@ -30,4 +30,6 @@ export const {
 } = projectsAdapter.getSelectors();
 
 export const getProjectById = (id: number) => (state: State) => state.entities[id];
+export const getProjectByExperienceId = (id: number) => (state: State) =>
+getAllProjects(state).filter(p => p.experienceId === id);
 

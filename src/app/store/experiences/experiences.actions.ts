@@ -1,8 +1,8 @@
-import {Experience} from '../../models/Experience.model';
+import {Experience} from '../../models/experience.model';
 import {createAction, props} from '@ngrx/store';
 
 export const loadExperience = createAction(
-  '[Video Stats] Load',
+  '[Experiences] Load',
   props<{payload: number}>()
 );
 

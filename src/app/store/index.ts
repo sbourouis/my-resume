@@ -21,6 +21,7 @@ export const getTitle = createSelector(getUiState, fromUi.getTitle);
 
 export const getProjectsState = createFeatureSelector<fromProjects.State>('projects');
 export const getAllProjects = createSelector(getProjectsState, fromProjects.getAllProjects);
+export const getProjectByExperienceId = (id: number) => createSelector(getProjectsState, fromProjects.getProjectByExperienceId(id));
 
 export const getExperiencesState = createFeatureSelector<fromExperiences.State>('experiences');
 export const getAllExperiences = createSelector(getExperiencesState, fromExperiences.getAllExperiences);
