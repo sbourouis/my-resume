@@ -7,6 +7,7 @@ export enum PROJECT_TYPE {
 export enum RESOURCE_TYPE {
   IMG = 'image',
   VIDEO = 'video',
+  YOUTUBE = 'youtube',
   LINK = 'link'
 }
 
@@ -14,6 +15,7 @@ export interface Resource {
   id?: number;
   name: string;
   src: string;
+  thumb?: string;
   type: RESOURCE_TYPE;
 }
 
@@ -26,6 +28,6 @@ export interface Project {
   experienceId?: number;
   type: PROJECT_TYPE;
   duration?: string;
-  resources?: Array<Resource>;
+  resources: Array<Resource>;
   participants: number;
 }
