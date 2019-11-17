@@ -6,6 +6,11 @@ export const loadProject = createAction(
   props<{payload: number}>()
 );
 
+export const setCurrentProjectId = createAction(
+  '[Projects] Set current project id',
+  props<{ payload: number }>()
+);
+
 export const loadProjectSuccess = createAction(
   '[Projects] Load success',
   props<{payload: Project}>()

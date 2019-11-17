@@ -1,7 +1,7 @@
 <app-nav-bar [isSideNavOpen]="isSideNavOpen$ | async"
              (sideNavClose)="closeSidenav()">
   <div drawer-content>
-    <div class="app-flex-fill app-column">
+    <div style="height:100vh" class="app-flex-fill app-column">
       <ngx-loading-bar [color]="'white'" [includeSpinner]="false"></ngx-loading-bar>
       <app-toolbar
         [title]="title$ | async"
