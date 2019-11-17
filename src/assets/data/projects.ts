@@ -104,7 +104,7 @@ export const projects: Project[] = [
         }, {
             name: 'Demo',
             type: RESOURCE_TYPE.YOUTUBE,
-            src: 'https://youtu.be/5mYw6ggjQbE'
+            src: '5mYw6ggjQbE'
         }],
         participants: 1,
         experienceId: 3
