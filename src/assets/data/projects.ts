@@ -130,7 +130,11 @@ architecture.
 ASCII representation, ranking, random game element generation (ennemies, map, objects, ...), permadeath, ...
         `,
         keywords: ['Java', 'Swing'],
-        resources: [],
+        resources: [{
+            name: 'Rogue game screenshot',
+            type: RESOURCE_TYPE.IMG,
+            src: 'assets/images/Rogue.PNG'
+        }],
         participants: 2,
         experienceId: 2
     },
