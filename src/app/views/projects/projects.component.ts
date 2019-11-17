@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectsStoreFacade } from '@app/main-store/projects/projects.facade';
 import { map } from 'rxjs/operators';
 import { PROJECT_TYPE } from 'src/app/models/project.model';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-projects',
@@ -18,7 +19,15 @@ export class ProjectsComponent implements OnInit {
     map(projects => projects.filter(p => p.type === PROJECT_TYPE.PRO))
   );
 
-  constructor(private projectsFacade: ProjectsStoreFacade) { }
+  isSMLayout$ = this.breakpointObserver.observe([
+    Breakpoints.Small,
+    Breakpoints.XSmall
+  ]).pipe(
+    map(res => res.matches)
+  );
+
+  constructor(private projectsFacade: ProjectsStoreFacade,
+              private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
     this.projectsFacade.loadProjects();

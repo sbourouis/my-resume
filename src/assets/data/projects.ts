@@ -57,6 +57,27 @@ export const projects: Project[] = [
     },
     {
         id: 5,
+        name: 'Soup Kitchen management',
+        type: PROJECT_TYPE.PRO,
+        description: `
+        Windows Forms application development using C# .NET 4.5 and Visual Studio 2012 allowing the
+complete management of a soup kitchen (users, customers, prices, transactions, search, history).
+        `,
+        keywords: ['C#', '.NET', 'WinForms'],
+        resources: [{
+            name: 'Lauberivière',
+            type: RESOURCE_TYPE.IMG,
+            src: 'assets/images/Lauberiviere.png'
+        }, {
+            name: 'Blog url',
+            type: RESOURCE_TYPE.LINK,
+            src: 'http://unstageauquebec.blogspot.com/2015/05/captures-decran.html'
+        }],
+        participants: 2,
+        experienceId: 5
+    },
+    {
+        id: 6,
         name: 'Medical data visualization application (front-end)',
         type: PROJECT_TYPE.PRO,
         description: `
@@ -77,7 +98,7 @@ export const projects: Project[] = [
         experienceId: 4
     },
     {
-        id: 6,
+        id: 7,
         name: 'Annotation application',
         type: PROJECT_TYPE.PRO,
         description: `
@@ -110,7 +131,7 @@ export const projects: Project[] = [
         experienceId: 3
     },
     {
-        id: 7,
+        id: 8,
         name: 'Store management',
         type: PROJECT_TYPE.ACADEMIC,
         description: `
@@ -124,7 +145,7 @@ search, reviews management, sales, statistics)
         experienceId: 2
     },
     {
-        id: 8,
+        id: 9,
         name: 'Rogue Like game',
         type: PROJECT_TYPE.ACADEMIC,
         description: `
@@ -140,27 +161,6 @@ ASCII representation, ranking, random game element generation (ennemies, map, ob
         }],
         participants: 2,
         experienceId: 2
-    },
-    {
-        id: 9,
-        name: 'Soup Kitchen management',
-        type: PROJECT_TYPE.PRO,
-        description: `
-        Windows Forms application development using C# .NET 4.5 and Visual Studio 2012 allowing the
-complete management of a soup kitchen (users, customers, prices, transactions, search, history).
-        `,
-        keywords: ['C#', '.NET', 'WinForms'],
-        resources: [{
-            name: 'Lauberivière',
-            type: RESOURCE_TYPE.IMG,
-            src: 'assets/images/Lauberiviere.png'
-        }, {
-            name: 'Blog url',
-            type: RESOURCE_TYPE.LINK,
-            src: 'http://unstageauquebec.blogspot.com/2015/05/captures-decran.html'
-        }],
-        participants: 2,
-        experienceId: 5
     }
 
 ];

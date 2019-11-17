@@ -1,19 +1,21 @@
-<div class="left-div">
-  <h3>ACADEMIC</h3>
-  <perfect-scrollbar
-    class="scroll-area"
-  >
-  <app-project-list
-    [projects]="schoolProjects$ | async"></app-project-list>
-  </perfect-scrollbar>
-</div>
-
-<div class="right-div">
-  <h3>PROFESSIONAL</h3>
-  <perfect-scrollbar
+<div class="projects" [ngClass]="{sm: (isSMLayout$ | async)}">
+  <div class="left-div">
+    <h3>ACADEMIC</h3>
+    <perfect-scrollbar
       class="scroll-area"
     >
     <app-project-list
-      [projects]="workProjects$ | async"></app-project-list>
-  </perfect-scrollbar>
+      [projects]="schoolProjects$ | async"></app-project-list>
+    </perfect-scrollbar>
+  </div>
+
+  <div class="right-div">
+    <h3>PROFESSIONAL</h3>
+    <perfect-scrollbar
+        class="scroll-area"
+      >
+      <app-project-list
+        [projects]="workProjects$ | async"></app-project-list>
+    </perfect-scrollbar>
+  </div>
 </div>
