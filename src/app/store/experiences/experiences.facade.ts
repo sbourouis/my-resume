@@ -3,6 +3,8 @@ import * as fromRoot from '../index';
 import {select, Store} from '@ngrx/store';
 import {State} from '@app/main-store';
 import { loadAllExperiences, loadExperience } from './experiences.actions';
+import { Experience } from 'src/app/models/experience.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ExperiencesStoreFacade {
@@ -17,6 +19,12 @@ export class ExperiencesStoreFacade {
 
   loadExperience(id: number) {
     this.store.dispatch(loadExperience({payload: id}));
+  }
+
+  getExperienceById(id: number): Observable<Experience> {
+    return this.store.pipe(
+      select(fromRoot.getExperienceById(id))
+    );
   }
 
 }
