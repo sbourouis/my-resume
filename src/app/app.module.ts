@@ -26,6 +26,8 @@ import { ProjectsEffects } from './store/projects/projects.effects';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import { ProjectItemComponent } from './components/project-item/project-item.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
+import { ProjectComponent } from './views/project/project.component';
+import { GalleryModule } from '@ngx-gallery/core';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,14 @@ import { ProjectListComponent } from './components/project-list/project-list.com
     ToolbarComponent,
     ExperienceComponent,
     ProjectItemComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
     PerfectScrollbarModule,
+    BrowserAnimationsModule,
+    GalleryModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {

@@ -20,8 +20,25 @@ export const isSideNavOpen = createSelector(getUiState, fromUi.isSideNavOpen);
 export const getTitle = createSelector(getUiState, fromUi.getTitle);
 
 export const getProjectsState = createFeatureSelector<fromProjects.State>('projects');
-export const getAllProjects = createSelector(getProjectsState, fromProjects.getAllProjects);
+export const {
+  selectAll: getAllProjects,
+  selectEntities: getProjectEntities
+} = fromProjects.projectsAdapter.getSelectors(getProjectsState);
+
+export const getCurrentProjectId = createSelector(
+  getProjectsState,
+  fromProjects.getCurrentProjectId
+);
+export const getProject = createSelector(
+  getProjectEntities,
+  getCurrentProjectId,
+  (projects, projectId) => projectId && projects[projectId]
+);
 export const getProjectByExperienceId = (id: number) => createSelector(getProjectsState, fromProjects.getProjectByExperienceId(id));
 
 export const getExperiencesState = createFeatureSelector<fromExperiences.State>('experiences');
 export const getAllExperiences = createSelector(getExperiencesState, fromExperiences.getAllExperiences);
+export const getExperienceById = (id: number) => createSelector(
+  getExperiencesState,
+  fromExperiences.getExperienceById(id)
+);

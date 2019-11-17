@@ -1,6 +1,5 @@
-import { Project, PROJECT_TYPE, Resource, RESOURCE_TYPE } from 'src/app/models/project.model';
+import { Project, PROJECT_TYPE, RESOURCE_TYPE } from 'src/app/models/project.model';
 
-// TODO
 export const projects: Project[] = [
     {
         id: 1,
@@ -102,6 +101,10 @@ export const projects: Project[] = [
             name: 'Video list',
             type: RESOURCE_TYPE.IMG,
             src: 'assets/images/videos.png'
+        }, {
+            name: 'Demo',
+            type: RESOURCE_TYPE.YOUTUBE,
+            src: '5mYw6ggjQbE'
         }],
         participants: 1,
         experienceId: 3
