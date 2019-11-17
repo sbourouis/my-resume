@@ -16,9 +16,13 @@
         <div class="resources">
             <div *ngIf="links.length" class="links">
                 <h4>Related links</h4>
-                <a *ngFor="let link of links" [href]="link.src">
-                    {{link.name}}
-                </a>
+                <ul>
+                    <li *ngFor="let link of links">
+                        <a [href]="link.src">
+                            {{link.name}}
+                        </a>
+                    </li>
+                </ul>
             </div>
             <gallery *ngIf="items.length" id="basic-test" fluid [items]="items"></gallery>
         </div>
