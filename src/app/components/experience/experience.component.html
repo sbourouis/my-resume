@@ -1,6 +1,4 @@
-<mat-card 
-  [routerLink]="['/projects']"
-  [queryParams]="{experienceId: experience.id}">
+<mat-card>
   <mat-card-header>
     <mat-card-title>{{experience.name}}</mat-card-title>
     <mat-card-subtitle>
@@ -13,4 +11,9 @@
       {{experience.description}}
     </p>
   </mat-card-content>
+  <mat-card-actions *ngIf="displayActions" class="actions">
+    <button mat-button color="accent"
+      [routerLink]="['/projects']"
+      [queryParams]="{experienceId: experience.id}">PROJECTS</button>
+  </mat-card-actions>
 </mat-card>

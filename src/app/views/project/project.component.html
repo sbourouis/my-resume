@@ -6,7 +6,11 @@
     <perfect-scrollbar
         class="scroll-area"
     >
-        <app-experience *ngIf="experience$ | async" class="experience" [experience]="experience$ | async"></app-experience>
+        <app-experience 
+            *ngIf="experience$ | async" 
+            class="experience" 
+            [displayActions]="false"
+            [experience]="experience$ | async"></app-experience>
         <div class="description">
             <p *ngIf="project.description?.length">{{project.description}}</p>
             <mat-chip-list *ngIf="project.keywords?.length" aria-label="Keywords">
