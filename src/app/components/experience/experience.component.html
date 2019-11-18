@@ -1,14 +1,16 @@
-<mat-card>
-    <mat-card-header>
-      <mat-card-title>{{experience.name}}</mat-card-title>
-      <mat-card-subtitle>
-        {{experience.location}} <br>
-        <i>{{experience.fromDate | date: 'MMM yyyy'}} - {{experience.toDate | date: 'MMM yyyy'}}</i>
-      </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        {{experience.description}}
-      </p>
-    </mat-card-content>
-  </mat-card>
+<mat-card 
+  [routerLink]="['/projects']"
+  [queryParams]="{experienceId: experience.id}">
+  <mat-card-header>
+    <mat-card-title>{{experience.name}}</mat-card-title>
+    <mat-card-subtitle>
+      {{experience.location}} <br>
+      <i>{{experience.fromDate | date: 'MMM yyyy'}} - {{experience.toDate | date: 'MMM yyyy'}}</i>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{experience.description}}
+    </p>
+  </mat-card-content>
+</mat-card>

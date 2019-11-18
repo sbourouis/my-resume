@@ -28,6 +28,7 @@ import { ProjectItemComponent } from './components/project-item/project-item.com
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { ProjectComponent } from './views/project/project.component';
 import { GalleryModule } from '@ngx-gallery/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,8 @@ import { GalleryModule } from '@ngx-gallery/core';
     BrowserModule,
     PerfectScrollbarModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     GalleryModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
