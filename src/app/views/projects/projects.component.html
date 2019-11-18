@@ -1,20 +1,45 @@
+<mat-card class="filters">
+  <mat-form-field>
+    <mat-label>Experience</mat-label>
+    <mat-select
+      [formControl]="experienceFilterControl">
+      <mat-option [value]="null">All experiences</mat-option>
+      <mat-option 
+        *ngFor="let experience of (experiences$ | async)"
+        [value]="experience.id"
+      >{{experience.name}} at {{experience.location}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-chip-list>
+      <mat-chip 
+        *ngFor="let keyword of (filters$ | async).keywords"
+        [removable]="true" (removed)="onKeywordRemoved(keyword)">
+        {{keyword}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+  </mat-chip-list>
+</mat-card>
+
 <div class="projects" [ngClass]="{sm: (isSMLayout$ | async)}">
-  <div class="left-div">
+  <div class="left-div" *ngIf="(schoolProjects$ | async)?.length">
     <h3>ACADEMIC</h3>
     <perfect-scrollbar
       class="scroll-area"
     >
     <app-project-list
+      (keywordClick)="onKeywordClicked($event)"
       [projects]="schoolProjects$ | async"></app-project-list>
     </perfect-scrollbar>
   </div>
 
-  <div class="right-div">
+  <div class="right-div" *ngIf="(workProjects$ | async)?.length">
     <h3>PROFESSIONAL</h3>
     <perfect-scrollbar
         class="scroll-area"
       >
       <app-project-list
+        (keywordClick)="onKeywordClicked($event)"
         [projects]="workProjects$ | async"></app-project-list>
     </perfect-scrollbar>
   </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Project, RESOURCE_TYPE, Resource } from 'src/app/models/project.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Project, RESOURCE_TYPE, Resource } from 'src/app/models/project.model';
 export class ProjectItemComponent implements OnInit {
 
   @Input() project: Project;
+  @Output() keywordClick = new EventEmitter<string>();
   img: Resource = null;
 
   constructor() { }

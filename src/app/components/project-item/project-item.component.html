@@ -8,7 +8,7 @@
         {{project.description}}
       </p>
       <mat-chip-list aria-label="Keywords">
-        <mat-chip *ngFor="let keyword of project.keywords">{{keyword}}</mat-chip>
+        <mat-chip *ngFor="let keyword of project.keywords" (click)="keywordClick.emit(keyword)">{{keyword}}</mat-chip>
       </mat-chip-list>
     </mat-card-content>
     <!--<mat-card-actions>
