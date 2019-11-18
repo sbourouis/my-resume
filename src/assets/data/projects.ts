@@ -47,11 +47,7 @@ export const projects: Project[] = [
         Update a non responsive website to a responsive website.
         `,
         keywords: ['CSS'],
-        resources: [{
-            name: 'Québec Info Musique',
-            type: RESOURCE_TYPE.LINK,
-            src: 'http://qim.com'
-        }],
+        resources: [],
         participants: 2,
         experienceId: 5
     },
