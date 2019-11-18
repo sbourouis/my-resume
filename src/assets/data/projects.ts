@@ -47,11 +47,7 @@ export const projects: Project[] = [
         Update a non responsive website to a responsive website.
         `,
         keywords: ['CSS'],
-        resources: [{
-            name: 'Québec Info Musique',
-            type: RESOURCE_TYPE.LINK,
-            src: 'http://qim.com'
-        }],
+        resources: [],
         participants: 2,
         experienceId: 5
     },
@@ -67,7 +63,7 @@ complete management of a soup kitchen (users, customers, prices, transactions, s
         resources: [{
             name: 'Lauberivière',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/images/Lauberiviere.png'
+            src: 'assets/images/Lauberiviere.jpg'
         }, {
             name: 'Blog url',
             type: RESOURCE_TYPE.LINK,
@@ -92,7 +88,7 @@ complete management of a soup kitchen (users, customers, prices, transactions, s
         resources: [{
             name: 'Medical data visualization',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/images/storage.png'
+            src: 'assets/images/storage.jpg'
         }],
         participants: 1,
         experienceId: 4
@@ -117,11 +113,11 @@ complete management of a soup kitchen (users, customers, prices, transactions, s
         resources: [{
             name: 'Annotation page',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/images/annotations.png'
+            src: 'assets/images/annotations.jpg'
         }, {
             name: 'Video list',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/images/videos.png'
+            src: 'assets/images/videos.jpg'
         }, {
             name: 'Demo',
             type: RESOURCE_TYPE.YOUTUBE,
@@ -157,7 +153,7 @@ ASCII representation, ranking, random game element generation (ennemies, map, ob
         resources: [{
             name: 'Rogue game screenshot',
             type: RESOURCE_TYPE.IMG,
-            src: 'assets/images/Rogue.PNG'
+            src: 'assets/images/Rogue.jpg'
         }],
         participants: 2,
         experienceId: 2
