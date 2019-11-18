@@ -1,5 +1,5 @@
 <div class="projects" [ngClass]="{sm: (isSMLayout$ | async)}">
-  <div class="left-div">
+  <div class="left-div" *ngIf="(schoolProjects$ | async)?.length">
     <h3>ACADEMIC</h3>
     <perfect-scrollbar
       class="scroll-area"
@@ -9,7 +9,7 @@
     </perfect-scrollbar>
   </div>
 
-  <div class="right-div">
+  <div class="right-div" *ngIf="(workProjects$ | async)?.length">
     <h3>PROFESSIONAL</h3>
     <perfect-scrollbar
         class="scroll-area"

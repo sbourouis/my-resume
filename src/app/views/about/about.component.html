@@ -25,6 +25,8 @@
       class="experiences" 
       *ngFor="let experience of schoolExperiences$ | async">
       <app-experience
+        [routerLink]="['/projects']"
+        [queryParams]="{experienceId: experience.id}"
         [experience]="experience"
       ></app-experience>
     </div>

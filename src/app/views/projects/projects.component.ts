@@ -12,10 +12,28 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 export class ProjectsComponent implements OnInit {
 
   projects$ = this.projectsFacade.allProjects$;
-  schoolProjects$ = this.projects$.pipe(
+  filters$ = new BehaviorSubject({
+    keywords: [],
+    experienceId: null
+  });
+  filteredProjects$ = combineLatest([this.projects$, this.filters$]).pipe(
+    map(([projects, filters]) => projects.filter(project => {
+      let bool = true;
+      if (filters.experienceId) {
+        bool = bool && project.experienceId === filters.experienceId;
+      }
+      if (filters.keywords && filters.keywords.length) {
+        bool = bool && filters.keywords
+        .map(keyword => project.keywords.includes(keyword))
+        .reduce((a, c) => a && c);
+      }
+      return bool;
+    }))
+  );
+  schoolProjects$ = this.filteredProjects$.pipe(
     map(projects => projects.filter(p => p.type === PROJECT_TYPE.ACADEMIC))
   );
-  workProjects$ = this.projects$.pipe(
+  workProjects$ = this.filteredProjects$.pipe(
     map(projects => projects.filter(p => p.type === PROJECT_TYPE.PRO))
   );
 
@@ -27,10 +45,17 @@ export class ProjectsComponent implements OnInit {
   );
 
   constructor(private projectsFacade: ProjectsStoreFacade,
+              private activatedRoute: ActivatedRoute,
               private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
     this.projectsFacade.loadProjects();
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.filters$.next({
+        experienceId: +params.experienceId,
+        keywords: typeof params.keywords === 'string' ? params.keywords.split(',') : params.keywords
+      });
+    });
   }
 
 }
