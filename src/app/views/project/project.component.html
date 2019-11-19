@@ -7,11 +7,11 @@
     <perfect-scrollbar
         class="scroll-area"
     >
-        <app-experience 
+        <app-experience-item 
             *ngIf="experience$ | async" 
             class="experience" 
             [displayActions]="false"
-            [experience]="experience$ | async"></app-experience>
+            [experience]="experience$ | async"></app-experience-item>
         <div class="description">
             <p *ngIf="!project.details?.length">{{project.description}}</p>
             <p *ngIf="project.details?.length">{{project.details}}</p>

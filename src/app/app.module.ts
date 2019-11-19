@@ -17,7 +17,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialCustomModule } from './modules';
 import { UiFacade } from './store/ui/ui.facade';
-import { ExperienceComponent } from './components/experience/experience.component';
+import { ExperienceItemComponent } from './components/experience-item/experience-item.component';
 import { ProjectsStoreFacade } from './store/projects/projects.facade';
 import { ExperiencesService } from './services/experiences.service';
 import { ExperiencesStoreFacade } from './store/experiences/experiences.facade';
@@ -40,7 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactComponent,
     NavBarComponent,
     ToolbarComponent,
-    ExperienceComponent,
+    ExperienceItemComponent,
     ProjectItemComponent,
     ProjectListComponent,
     ProjectComponent
