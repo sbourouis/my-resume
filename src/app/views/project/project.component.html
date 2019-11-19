@@ -1,3 +1,4 @@
+<button style="position:fixed;margin:10px" [routerLink]="['/projects']" mat-button><mat-icon>arrow_back</mat-icon></button>
 <div *ngIf="(project$ | async) as project" class="project">
     <div class="title">
         <h2>{{project.name}}</h2>
