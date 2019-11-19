@@ -28,6 +28,8 @@ import { ProjectItemComponent } from './components/project-item/project-item.com
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { ProjectComponent } from './views/project/project.component';
 import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
+import { GallerizeModule } from '@ngx-gallery/gallerize';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -50,6 +52,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     GalleryModule,
+    LightboxModule,
+    GallerizeModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {

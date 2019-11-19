@@ -112,7 +112,7 @@ For 1 year, I worked on the front-end of this application that could be used to 
             in an amphitheater for example.
 To realize this project, I chose Angular for the front-end and NestJS, a Node.js framework, for the back-end.
  The back-end managed the annotations, the videos, generated the videos thumbnails, recorded live video streams,
-  used Websockets to keep each client up-to-date and to allow collaboration. 
+  used Websockets to keep each client up-to-date and to allow collaboration.
 The front-end displayed all the saved videos and the operating rooms. The user could chose a live video and
  annotate it by drawing bounding boxes around the objects of interests while the stream was playing and when he
   left the stream, it was recorded and he could replay the video with all the annotations he draw earlier.
