@@ -12,7 +12,8 @@
             [displayActions]="false"
             [experience]="experience$ | async"></app-experience>
         <div class="description">
-            <p *ngIf="project.description?.length">{{project.description}}</p>
+            <p *ngIf="!project.details?.length">{{project.description}}</p>
+            <p *ngIf="project.details?.length">{{project.details}}</p>
             <mat-chip-list *ngIf="project.keywords?.length" aria-label="Keywords">
                 <mat-chip *ngFor="let keyword of project.keywords">{{keyword}}</mat-chip>
             </mat-chip-list>

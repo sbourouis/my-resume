@@ -24,6 +24,7 @@ export interface Project {
   name: string;
   role?: string;
   description: string;
+  details?: string;
   keywords: Array<string>;
   experienceId?: number;
   type: PROJECT_TYPE;
