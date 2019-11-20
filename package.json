@@ -38,6 +38,7 @@
     "@ngrx/store-devtools": "^8.0.1",
     "@ngx-gallery/core": "^4.0.3",
     "@ngx-gallery/gallerize": "^4.0.3",
+    "@ngx-gallery/lightbox": "^4.0.3",
     "@ngx-loading-bar/core": "^4.2.0",
     "@ngx-loading-bar/router": "^4.2.0",
     "core-js": "^2.5.4",

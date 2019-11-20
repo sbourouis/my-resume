@@ -24,9 +24,9 @@
     <div 
       class="experiences" 
       *ngFor="let experience of schoolExperiences$ | async">
-      <app-experience
+      <app-experience-item
         [experience]="experience"
-      ></app-experience>
+      ></app-experience-item>
     </div>
 
     <mat-divider></mat-divider>
@@ -35,9 +35,9 @@
     <div 
       class="experiences" 
       *ngFor="let experience of workExperiences$ | async">
-      <app-experience
+      <app-experience-item
         [experience]="experience"
-      ></app-experience>
+      ></app-experience-item>
     </div>
   </perfect-scrollbar>
 

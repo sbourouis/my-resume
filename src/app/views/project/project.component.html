@@ -1,3 +1,4 @@
+<button style="position:fixed;margin:10px" [routerLink]="['/projects']" mat-button><mat-icon>arrow_back</mat-icon></button>
 <div *ngIf="(project$ | async) as project" class="project">
     <div class="title">
         <h2>{{project.name}}</h2>
@@ -6,13 +7,14 @@
     <perfect-scrollbar
         class="scroll-area"
     >
-        <app-experience 
+        <app-experience-item 
             *ngIf="experience$ | async" 
             class="experience" 
             [displayActions]="false"
-            [experience]="experience$ | async"></app-experience>
+            [experience]="experience$ | async"></app-experience-item>
         <div class="description">
-            <p *ngIf="project.description?.length">{{project.description}}</p>
+            <p *ngIf="!project.details?.length">{{project.description}}</p>
+            <p *ngIf="project.details?.length">{{project.details}}</p>
             <mat-chip-list *ngIf="project.keywords?.length" aria-label="Keywords">
                 <mat-chip *ngFor="let keyword of project.keywords">{{keyword}}</mat-chip>
             </mat-chip-list>
@@ -28,7 +30,7 @@
                     </li>
                 </ul>
             </div>
-            <gallery *ngIf="items.length" id="basic-test" fluid [items]="items"></gallery>
+            <gallery gallerize *ngIf="items.length" [items]="items"></gallery>
         </div>
     </perfect-scrollbar>
 </div>

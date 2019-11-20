@@ -17,7 +17,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialCustomModule } from './modules';
 import { UiFacade } from './store/ui/ui.facade';
-import { ExperienceComponent } from './components/experience/experience.component';
+import { ExperienceItemComponent } from './components/experience-item/experience-item.component';
 import { ProjectsStoreFacade } from './store/projects/projects.facade';
 import { ExperiencesService } from './services/experiences.service';
 import { ExperiencesStoreFacade } from './store/experiences/experiences.facade';
@@ -28,6 +28,8 @@ import { ProjectItemComponent } from './components/project-item/project-item.com
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { ProjectComponent } from './views/project/project.component';
 import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
+import { GallerizeModule } from '@ngx-gallery/gallerize';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -38,7 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactComponent,
     NavBarComponent,
     ToolbarComponent,
-    ExperienceComponent,
+    ExperienceItemComponent,
     ProjectItemComponent,
     ProjectListComponent,
     ProjectComponent
@@ -50,6 +52,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     GalleryModule,
+    LightboxModule,
+    GallerizeModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
