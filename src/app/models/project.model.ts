@@ -29,6 +29,6 @@ export interface Project {
   experienceId?: number;
   type: PROJECT_TYPE;
   duration?: string;
-  resources?: Array<Resource>;
+  resources: Array<Resource>;
   participants: number;
 }
