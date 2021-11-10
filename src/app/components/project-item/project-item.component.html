@@ -2,7 +2,7 @@
     <mat-card-header [routerLink]="project.id">
       <mat-card-title>{{project.name}}</mat-card-title>
     </mat-card-header>
-    <img [routerLink]="project.id" *ngIf="img" mat-card-image [src]="img.src" [alt]="img.description">
+    <img [routerLink]="project.id" *ngIf="img" mat-card-image [src]="imageUri" [alt]="img.description">
     <mat-card-content>
       <p>
         {{project.description}}

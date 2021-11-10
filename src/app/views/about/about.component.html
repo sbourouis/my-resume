@@ -5,13 +5,13 @@
 </div>
 <div class="right-div">
   <h1>About me</h1>
-  
+
   <perfect-scrollbar
     class="scroll-area"
   >
   <section>
-    <span class="mat-accent">25 years old </span>  / <span class="mat-accent">Sydney</span>
-    
+    <span class="mat-accent">{{age}} years old </span>  / <span class="mat-accent">Sydney</span>
+
       <p>Native french Angular developer seeking for a short-term contract in Sydney. <br>
       Very interested in new technologies, I initially followed a general computer science training, then I specialized in web technologies during my 3 years apprenticeship. <br>
       I used those skills in the Research and Development department of IRCAD where I could master Angular and Node.js. <br>
@@ -21,8 +21,8 @@
     <mat-divider></mat-divider>
 
     <h2><mat-icon>school</mat-icon>   Education</h2>
-    <div 
-      class="experiences" 
+    <div
+      class="experiences"
       *ngFor="let experience of schoolExperiences$ | async">
       <app-experience-item
         [experience]="experience"
@@ -32,8 +32,8 @@
     <mat-divider></mat-divider>
 
     <h2><mat-icon>work</mat-icon>   Work experience</h2>
-    <div 
-      class="experiences" 
+    <div
+      class="experiences"
       *ngFor="let experience of workExperiences$ | async">
       <app-experience-item
         [experience]="experience"

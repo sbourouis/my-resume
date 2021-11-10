@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Experience, EXPERIENCE_TYPE } from 'src/app/models/experience.model';
 import { map } from 'rxjs/operators';
 import { ExperiencesStoreFacade } from '@app/main-store/experiences/experiences.facade';
@@ -32,6 +32,8 @@ export class AboutComponent implements OnInit {
   ]).pipe(
     map(res => res.matches)
   );
+
+  age: number = Math.floor(Math.abs(Date.now() - new Date('1994-04-23T03:35:00').getTime()) / (1000 * 3600  * 24) / 365.25);
 
   constructor(private experiencesFacade: ExperiencesStoreFacade,
               private breakpointObserver: BreakpointObserver) { }

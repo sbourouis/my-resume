@@ -6,6 +6,7 @@ import { ExperiencesStoreFacade } from '@app/main-store/experiences/experiences.
 import { GalleryItem, Gallery, ImageItem, VideoItem, YoutubeItem } from '@ngx-gallery/core';
 import { RESOURCE_TYPE, Resource } from 'src/app/models/project.model';
 import { Experience } from 'src/app/models/experience.model';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-project',
@@ -30,18 +31,20 @@ export class ProjectComponent implements OnInit, OnDestroy {
       this.projectsStoreFacade.setCurrentProjectId(+params.projectId);
     });
     const projectSub = this.project$.subscribe(project => {
-      if (project.experienceId) {
-        this.experiencesStoreFacade.loadExperience(project.experienceId);
-        this.experience$ = this.experiencesStoreFacade.getExperienceById(project.experienceId);
+      if (project) {
+        if (project.experienceId) {
+          this.experiencesStoreFacade.loadExperience(project.experienceId);
+          this.experience$ = this.experiencesStoreFacade.getExperienceById(project.experienceId);
+        }
+        this.links = project.resources?.filter(r => r.type === RESOURCE_TYPE.LINK);
+        this.items = project.resources
+          ?.filter(resource => resource.type !== RESOURCE_TYPE.LINK)
+          .map(item => item.type === RESOURCE_TYPE.IMG ?
+            new ImageItem({ src: `${environment.apiConfig.baseUrl}/${item.src}`, thumb: `${environment.apiConfig.baseUrl}/${item.src}` }) :
+            item.type === RESOURCE_TYPE.VIDEO ?
+              new VideoItem({ src: item.src, thumb: item.thumb }) :
+              new YoutubeItem({ src : item.src }));
       }
-      this.links = project.resources.filter(r => r.type === RESOURCE_TYPE.LINK);
-      this.items = project.resources
-        .filter(resource => resource.type !== RESOURCE_TYPE.LINK)
-        .map(item => item.type === RESOURCE_TYPE.IMG ?
-          new ImageItem({ src: item.src, thumb: item.src }) :
-          item.type === RESOURCE_TYPE.VIDEO ?
-          new VideoItem({ src: item.src, thumb: item.thumb }) :
-          new YoutubeItem({ src : item.src }));
     });
     this.subscriptions.push(routeSub, projectSub);
   }
