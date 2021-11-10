@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Project, RESOURCE_TYPE, Resource } from 'src/app/models/project.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-project-item',
@@ -12,10 +13,14 @@ export class ProjectItemComponent implements OnInit {
   @Output() keywordClick = new EventEmitter<string>();
   img: Resource = null;
 
+  get imageUri(): string | null {
+    return this.img ? `${environment.apiConfig.baseUrl}/${this.img.src}` : null;
+  }
+
   constructor() { }
 
   ngOnInit() {
-    this.img = this.project.resources.find(r => r.type === RESOURCE_TYPE.IMG);
+    this.img = this.project.resources?.find(r => r.type === RESOURCE_TYPE.IMG);
   }
 
 }
