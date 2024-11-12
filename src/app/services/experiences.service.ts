@@ -3,7 +3,9 @@ import { Experience } from '../models/experience.model';
 import { environment } from 'src/environments/environment';
 import { of, Observable } from 'rxjs';
 import { experiences } from 'src/assets/data/experiences';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class ExperiencesService {
     constructor(private http: HttpClient) { }
 
