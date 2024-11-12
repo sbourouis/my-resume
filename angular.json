@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "my-resume"
+  "defaultProject": "my-resume",
+  "cli": {
+    "analytics": "d20b5189-9dfa-430e-a0bf-7d1038415dd2"
+  }
 }

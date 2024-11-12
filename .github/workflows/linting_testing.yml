@@ -1,0 +1,44 @@
+name: Linting & Testing
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+  push:
+    branches:
+      - "master"
+  workflow_dispatch:
+
+jobs:
+  ui_build_lint_test:
+    name: Run ui test suite
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    timeout-minutes: 40
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm ci
+
+    - run: npm run build:prod --if-present
+      env:
+        CI: true
+
+    - run: npm run lint
+      env:
+        CI: true
+
+    - run: npm run test
+      env:
+        CI: true
