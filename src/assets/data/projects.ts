@@ -171,6 +171,14 @@ The annotations were labelled bounding boxes that could have different sizes and
             name: 'Previous annotation project',
             type: RESOURCE_TYPE.LINK,
             src: 'projects/7'
+        }, {
+          name: 'Research paper',
+          type: RESOURCE_TYPE.LINK,
+          src: 'https://www.researchgate.net/publication/371871723_INDEXITY_a_web-based_collaborative_tool_for_medical_video_annotation'
+        }, {
+          name: 'GitHub repository',
+          type: RESOURCE_TYPE.LINK,
+          src: 'https://github.com/CAMMA-public/indexity'
         }],
         participants: 2,
         experienceId: 3
